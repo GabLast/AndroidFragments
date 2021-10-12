@@ -6,22 +6,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.fragmentos.placeholder.PlaceholderContent.PlaceholderItem;
+import com.example.fragmentos.placeholder.PlaceholderContent;
 import com.example.fragmentos.databinding.FragmentItemBinding;
 
 import java.util.List;
 
-/**
- * {@link RecyclerView.Adapter} that can display a {@link PlaceholderItem}.
- * TODO: Replace the implementation with code for your data type.
- */
 public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecyclerViewAdapter.ViewHolder> {
 
-    private final List<PlaceholderItem> mValues;
-    private final OnTouchListener<PlaceholderItem> mListener;
+    private final List<PlaceholderContent.PlaceholderVersion> mValues;
+    private final OnTouchListener<PlaceholderContent.PlaceholderVersion> mListener;
 
 
-    public MyItemRecyclerViewAdapter(List<PlaceholderItem> items, OnTouchListener<PlaceholderItem> listener) {
+    public MyItemRecyclerViewAdapter(List<PlaceholderContent.PlaceholderVersion> items, OnTouchListener<PlaceholderContent.PlaceholderVersion> listener) {
         mValues = items;
         mListener = listener;
     }
@@ -37,8 +33,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-//        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(holder.mItem.content);
+        holder.mContentView.setText(holder.mItem.getName());
     }
 
     @Override
@@ -48,10 +43,10 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public final TextView mContentView;
-        public PlaceholderItem mItem;
-        private OnTouchListener<PlaceholderItem> mListener;
+        public PlaceholderContent.PlaceholderVersion mItem;
+        private OnTouchListener<PlaceholderContent.PlaceholderVersion> mListener;
 
-        public ViewHolder(FragmentItemBinding binding, OnTouchListener<PlaceholderItem> listener) {
+        public ViewHolder(FragmentItemBinding binding, OnTouchListener<PlaceholderContent.PlaceholderVersion> listener) {
             super(binding.getRoot());
             mContentView = binding.content;
             mListener = listener;
