@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Fragmentos</string>
+    <string name="releaseDate">Release Date:</string>
+    <string name="supported">Supported:</string>
+    <string name="lvl">Level:</string>
+    <string name="internalCode">Internal Code:</string>
+    <string name="version">Version:</string>
+    <string name="link">Link</string>
 </resources>
