@@ -22,19 +22,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_main);
         initFragment();
     }
 
     public void initFragment(){
         int orientation = getResources().getConfiguration().orientation;
         int cols;
-
         if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            setContentView(R.layout.activity_main_dual);
+
             cols = 1;
         } else {
-            setContentView(R.layout.activity_main);
+
             cols = 2;
         }
 
